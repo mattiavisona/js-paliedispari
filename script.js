@@ -19,23 +19,38 @@ checkButtonElement.addEventListener("click", function(){
 
     let palindrome = true;
 
+
+    let start = 0;
+
+    let end = textWordElement.value.length - 1;
+
     // creo il ciclo che analizza ogni lettera della parola
 
     for (let  index= 0; index < textWordElement.value.length; index++) {;
-        
-
-        console.log(textWordElement.value[index]);
 
 
 // Controllo che il primo elemento sia uguale all'ultimo
-        if (textWordElement.value[0] == textWordElement.value[textWordElement.value-length - 1]) {
+        if (textWordElement.value[start] == textWordElement.value[end]) {
 
             
+
         } else {
 
-            palindrome = false;
+            
 
-        
+            palindrome = false;
+            
         }
+
+        start++;
+        end--;
+
+        if (palindrome) {
+            console.log("La parola è palindroma");
+
+        } else {
+            console.log("La parola non è palindroma");
+        }
+        
     }
 })
